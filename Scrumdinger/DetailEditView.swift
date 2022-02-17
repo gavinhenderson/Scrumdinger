@@ -12,7 +12,7 @@ struct DetailEditView: View {
                     Slider(value: $data.lengthInMinutes, in: 5...30, step: 1) {
                         Text("Length")
                     }
-                    .accessibilityValue("\(data.lengthInMinutes) minutes")
+                    .accessibilityValue("\(Int(data.lengthInMinutes)) minutes")
                     Spacer()
                     Text("\(Int(data.lengthInMinutes)) minutes")
                         .accessibilityHidden(true)
@@ -23,11 +23,11 @@ struct DetailEditView: View {
                 ForEach(data.attendees) { attendee in
                     Text(attendee.name)
                 }
-                .onDelete { indicies in
-                    data.attendees.remove(atOffsets: indicies)
+                .onDelete { indices in
+                    data.attendees.remove(atOffsets: indices)
                 }
                 HStack {
-                    TextField("New attendee", text: $newAttendeeName)
+                    TextField("New Attendee", text: $newAttendeeName)
                     Button(action: {
                         withAnimation {
                             let attendee = DailyScrum.Attendee(name: newAttendeeName)
@@ -47,6 +47,6 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(data: .constant(DailyScrum.sampleData[0]))
+        DetailEditView(data: .constant(DailyScrum.sampleData[0].data))
     }
 }
