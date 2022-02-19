@@ -1,4 +1,5 @@
 import SwiftUI
+import AVFoundation
 
 struct MeetingFooterView: View {
     let speakers: [ScrumTimer.Speaker]
