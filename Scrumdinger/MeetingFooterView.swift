@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MeetingViewFooter: View {
+struct MeetingFooterView: View {
     let speakers: [ScrumTimer.Speaker]
     var skipAction: ()->Void
     
@@ -44,7 +44,7 @@ struct MeetingViewFooter: View {
 
 struct MeetingViewFooter_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingViewFooter(speakers: DailyScrum.sampleData[0].attendees.speakers, skipAction: {})
+        MeetingFooterView(speakers: DailyScrum.sampleData[0].attendees.speakers, skipAction: {})
             .previewLayout(.sizeThatFits)
     }
 }
