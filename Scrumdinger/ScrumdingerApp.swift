@@ -2,7 +2,7 @@ import SwiftUI
 
 @main
 struct ScrumdingerApp: App {
-    @State private var store = ScrumStore()
+    @StateObject private var store = ScrumStore()
     
     var body: some Scene {
         WindowGroup {
